@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 
 const PHONE = "919361901746";
+const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 const displayPhone = "+91 9361901746";
 
 const products = [
@@ -12,36 +13,36 @@ const products = [
     name: "Classic Fudge Brownie",
     desc: "Rich, fudgy and deeply chocolatey.",
     price: "From ₹30",
-    image: "/images/brownie-1.jpg",
+    image: asset("images/brownie-1.jpg"),
     tag: "Best Seller"
   },
   {
     name: "Almond Brownie",
     desc: "Fudgy chocolate brownie with roasted almond.",
     price: "From ₹40",
-    image: "/images/brownie-2.jpg",
+    image: asset("images/brownie-2.jpg"),
     tag: "Customer Favourite"
   },
   {
     name: "Cashew Brownie",
     desc: "Soft chocolate brownie finished with cashew.",
     price: "From ₹40",
-    image: "/images/brownie-3.jpg",
+    image: asset("images/brownie-3.jpg"),
     tag: "Fresh"
   },
   {
     name: "Assorted Brownies",
     desc: "A delicious mix for sharing and gifting.",
     price: "From ₹250",
-    image: "/images/brownie-5.jpg",
+    image: asset("images/brownie-5.jpg"),
     tag: "Gift Box"
   }
 ];
 
 const categories = [
-  { title: "Brownies", subtitle: "Rich • Fudgy • Chocolatey", image: "/images/brownie-1.jpg", icon: "🍫" },
-  { title: "Cookies", subtitle: "Crispy • Chewy • Homemade", image: "/images/brownie-4.jpg", icon: "🍪" },
-  { title: "Customised Cakes", subtitle: "For your special moments", image: "/images/brownie-6.jpg", icon: "🎂" }
+  { title: "Brownies", subtitle: "Rich • Fudgy • Chocolatey", image: asset("images/brownie-1.jpg"), icon: "🍫" },
+  { title: "Cookies", subtitle: "Crispy • Chewy • Homemade", image: asset("images/brownie-4.jpg"), icon: "🍪" },
+  { title: "Customised Cakes", subtitle: "For your special moments", image: asset("images/brownie-6.jpg"), icon: "🎂" }
 ];
 
 const reviews = [
@@ -138,7 +139,7 @@ function App() {
 
             <div className="hero-photo">
               <div className="photo-frame">
-                <img src="/images/brownie-3.jpg" alt="Fresh homemade brownies" />
+                <img src={asset("images/brownie-3.jpg")} alt="Fresh homemade brownies" />
                 <div className="photo-badge"><span>100%</span><small>HOMEMADE</small></div>
                 <div className="floating-card">
                   <span className="floating-icon">🍫</span>
@@ -218,7 +219,7 @@ function App() {
         <section id="about" className="about section-dark">
           <div className="container about-grid">
             <div className="about-collage">
-              <img className="about-main" src="/images/brownie-poster.jpg" alt="The Cozy Bakery Corner brownies"/>
+              <img className="about-main" src= {asset("images/brownie-poster.jpg")} alt="The Cozy Bakery Corner brownies"/>
               <div className="about-stamp"><span>BAKED</span><strong>WITH</strong><span>LOVE</span></div>
             </div>
             <div className="about-copy">
@@ -248,11 +249,11 @@ function App() {
               <p>A peek at the brownies that make every bite special.</p>
             </div>
             <div className="gallery-grid">
-              <div className="gallery-item tall"><img src="/images/brownie-1.jpg" alt="Brownie"/></div>
-              <div className="gallery-item"><img src="/images/brownie-2.jpg" alt="Almond brownie"/></div>
-              <div className="gallery-item"><img src="/images/brownie-4.jpg" alt="Brownie tray"/></div>
-              <div className="gallery-item wide"><img src="/images/brownie-5.jpg" alt="Assorted brownies"/></div>
-              <div className="gallery-item"><img src="/images/brownie-6.jpg" alt="Homemade brownie"/></div>
+              <div className="gallery-item tall"><img src= {asset("images/brownie-1.jpg")} alt="Brownie"/></div>
+              <div className="gallery-item"><img src={asset("images/brownie-2.jpg")} alt="Almond brownie"/></div>
+              <div className="gallery-item"><img src={asset("images/brownie-4.jpg")} alt="Brownie tray"/></div>
+              <div className="gallery-item wide"><img src={asset("images/brownie-5.jpg")} alt="Assorted brownies"/></div>
+              <div className="gallery-item"><img src={asset("images/brownie-6.jpg")} alt="Homemade brownie"/></div>
             </div>
           </div>
         </section>
