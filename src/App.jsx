@@ -289,7 +289,12 @@ function App() {
               </a>
               <a className="contact-link" href={`tel:+${PHONE}`}><Phone size={18}/> {displayPhone}</a>
               <span className="contact-link"><span>⌖</span> Katpadi, Tamil Nadu</span>
-              <a className="contact-link" href="#" onClick={(e) => { e.preventDefault(); goTo("gallery"); }}>
+             <a
+  className="contact-link"
+  href="https://www.instagram.com/the_cozy_bakery_corner_/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
                 <Instagram size={18}/> Follow our baking journey
               </a>
             </div>
