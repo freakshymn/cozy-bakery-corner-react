@@ -40,9 +40,9 @@ const products = [
 ];
 
 const categories = [
-  { title: "Brownies", subtitle: "Rich • Fudgy • Chocolatey", image: asset("images/brownie-1.jpg"), icon: "🍫" },
-  { title: "Cookies", subtitle: "Crispy • Chewy • Homemade", image: asset("images/brownie-4.jpg"), icon: "🍪" },
-  { title: "Customised Cakes", subtitle: "For your special moments", image: asset("images/brownie-6.jpg"), icon: "🎂" }
+  { title: "Brownies", subtitle: "Rich • Fudgy • Chocolatey", image: asset("images/brownie.jpeg"), icon: "🍫" },
+  { title: "Cookies", subtitle: "Crispy • Chewy • Homemade", image: asset("images/cookies.jpeg"), icon: "🍪" },
+  { title: "Customised Cakes", subtitle: "For your special moments", image: asset("images/cakes.jpeg"), icon: "🎂" }
 ];
 
 const reviews = [
@@ -190,7 +190,7 @@ function App() {
               ))}
             </div>
 
-            <div id="products" className="product-grid">
+            {/* <div id="products" className="product-grid">
               {products.map((product) => (
                 <article className="product-card" key={product.name}>
                   <div className="product-image">
@@ -207,7 +207,7 @@ function App() {
                   </div>
                 </article>
               ))}
-            </div>
+            </div> */}
 
             <div className="menu-cta">
               <div><span>Need something special?</span><strong>Custom flavours & celebration boxes are available.</strong></div>
@@ -254,6 +254,8 @@ function App() {
               <div className="gallery-item"><img src={asset("images/brownie-4.jpg")} alt="Brownie tray"/></div>
               <div className="gallery-item wide"><img src={asset("images/brownie-5.jpg")} alt="Assorted brownies"/></div>
               <div className="gallery-item"><img src={asset("images/brownie-6.jpg")} alt="Homemade brownie"/></div>
+                            <div className="gallery-item"><img src={asset("images/brownie-6.jpg")} alt="Homemade brownie"/></div>
+
             </div>
           </div>
         </section>
