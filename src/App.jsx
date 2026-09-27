@@ -253,8 +253,9 @@ function App() {
               <div className="gallery-item"><img src={asset("images/brownie-2.jpg")} alt="Almond brownie"/></div>
               <div className="gallery-item"><img src={asset("images/brownie-4.jpg")} alt="Brownie tray"/></div>
               <div className="gallery-item wide"><img src={asset("images/brownie-5.jpg")} alt="Assorted brownies"/></div>
-              <div className="gallery-item"><img src={asset("images/brownie-6.jpg")} alt="Homemade brownie"/></div>
-                            <div className="gallery-item"><img src={asset("images/brownie-6.jpg")} alt="Homemade brownie"/></div>
+              <div className="gallery-item"><img src={asset("images/nudescakes.jpeg")} alt="Homemade brownie"/></div>
+              <div className="gallery-item"><img src={asset("images/both.png")} alt="Homemade brownie"/></div>
+              <div className="gallery-item"><img src={asset("images/biscuit.jpeg")} alt="Homemade brownie"/></div>
 
             </div>
           </div>
