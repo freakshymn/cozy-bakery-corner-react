@@ -172,23 +172,27 @@ function App() {
               <p>Freshly baked • Homemade • Delicious</p>
             </div>
 
-            <div className="category-grid">
-              {categories.map((cat) => (
-                <article className="category-card" key={cat.title}>
-                  <div className="category-image">
-                    <img src={cat.image} alt={cat.title}/>
-                    <span className="category-icon">{cat.icon}</span>
-                  </div>
-                  <div className="category-body">
-                    <h3>{cat.title}</h3>
-                    <p>{cat.subtitle}</p>
-                    <button onClick={() => cat.title === "Brownies" ? goTo("products") : openOrder(cat.title)}>
-                      EXPLORE <ArrowRight size={15}/>
-                    </button>
-                  </div>
-                </article>
-              ))}
-            </div>
+                      <div className="category-grid">
+                        {categories.map((cat) => (
+                          <article className="category-card" key={cat.title}>
+                            <div className="category-image">
+                              <img src={cat.image} alt={cat.title}/>
+                              <span className="category-icon">{cat.icon}</span>
+                            </div>
+
+                            <div className="category-body">
+                              <h3>{cat.title}</h3>
+                              <p>{cat.subtitle}</p>
+
+                              {cat.title !== "Customised Cakes" && (
+                                <button onClick={() => openOrder(cat.title)}>
+                                  EXPLORE <ArrowRight size={15}/>
+                                </button>
+                              )}
+                            </div>
+                          </article>
+                        ))}
+                      </div>
 
             {/* <div id="products" className="product-grid">
               {products.map((product) => (
