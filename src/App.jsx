@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react"; 
 import {
 
   ArrowRight, CakeSlice, Check, ChevronDown, Heart, Instagram,
@@ -56,13 +55,31 @@ const categories = [
 
 
 const reviews = [
-
-  { text: "The brownies were soft, rich and super chocolatey. Loved every bite!", name: "Happy Customer", rating: 5 },
-
-  { text: "Beautifully packed and perfect for gifting. Fresh taste and lovely texture.", name: "Happy Customer", rating: 5 },
-
-  { text: "The homemade feel really comes through. Will definitely order again!", name: "Happy Customer", rating: 5 }
-
+  {
+    text: "Absolutely delicious! These brownies have a beautifully crisp, shiny top with a wonderfully dense and gooey center. The rich chocolate flavor is perfectly balanced, delivering a decadent taste in every bite. They are pleasantly sweet without being overpowering, making them incredibly enjoyable. Highly recommended for any chocolate lover!",
+    name: "Happy Customer",
+    rating: 5
+  },
+  {
+    text: "Hi I received the brownies. Brownie was very yummy...😍😍❤️ My son loved it...❤️",
+    name: "Happy Customer",
+    rating: 5
+  },
+  {
+    text: "We ate your brownie. It was so nice. Kids also liked it ❤️ Romba thank u",
+    name: "Happy Customer",
+    rating: 5
+  },
+  {
+    text: "Brownie was good. Slightly put it small very, one piece is full, too big. All good, nice taste ❤️",
+    name: "Happy Customer",
+    rating: 5
+  },
+  {
+    text: "Need another batch of brownies. Kefly likes it more.",
+    name: "Happy Customer",
+    rating: 5
+  }
 ];
 
 
@@ -91,7 +108,15 @@ function App() {
 
   const [selectedCategory, setSelectedCategory] = useState("");
 
+  const [currentReview, setCurrentReview] = useState(0);
 
+useEffect(() => {
+  const reviewTimer = setInterval(() => {
+    setCurrentReview((prev) => (prev + 1) % reviews.length);
+  }, 4000);
+
+  return () => clearInterval(reviewTimer);
+}, []);
 
   const goTo = (id) => {
 
@@ -475,29 +500,32 @@ function App() {
 
             </div>
 
-            <div className="review-grid">
+            <div className="review-slider">
+  <article className="review-card review-slide" key={currentReview}>
 
-              {reviews.map((review, i) => {
+    <div className="review-stars">
+      {Array.from({ length: reviews[currentReview].rating }).map((_, j) => (
+        <Star key={j} size={16} fill="currentColor" />
+      ))}
+    </div>
 
-                const reviewRating = Number(review?.rating) || 0;
+    <p>“{reviews[currentReview].text}”</p>
 
-                return (
+    <span>— {reviews[currentReview].name}</span>
 
-                  <article className="review-card" key={i}>
+  </article>
 
-                    <div className="review-stars">{Array.from({ length: reviewRating }).map((_, j) => <Star key={j} size={16} fill="currentColor"/>)}</div>
-
-                    <p>“{review.text}”</p>
-
-                    <span>— {review.name}</span>
-
-                  </article>
-
-                );
-
-              })}
-
-            </div>
+  <div className="review-dots">
+    {reviews.map((_, index) => (
+      <button
+        key={index}
+        className={index === currentReview ? "active" : ""}
+        onClick={() => setCurrentReview(index)}
+        aria-label={`Go to review ${index + 1}`}
+      />
+    ))}
+  </div>
+</div>
 
           </div>
 
